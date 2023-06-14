@@ -11,6 +11,7 @@ export const MESSAGE_SENDER = {
 export const MESSAGES_TYPES = {
   TEXT: 'text',
   CAROUSEL: 'carousel',
+  DATEPICKER: 'datepicker',
   VIDREPLY: {
     VIDEO: 'vidreply'
   },
@@ -42,6 +43,7 @@ export const PROP_TYPES = {
       MESSAGES_TYPES.TEXT,
       MESSAGES_TYPES.BUTTONS,
       MESSAGES_TYPES.CAROUSEL,
+      MESSAGES_TYPES.DATEPICKER,
       MESSAGES_TYPES.IMGREPLY.IMAGE,
       MESSAGES_TYPES.VIDREPLY.VIDEO
     ]),
@@ -60,6 +62,11 @@ export const PROP_TYPES = {
         buttons: ImmutablePropTypes.listOf(replybuttons),
         defaultActions: replybuttons
       })),
+    sender: senderType
+  }),
+
+  DATEPICKER: ImmutablePropTypes.contains({
+    id: PropTypes.number,
     sender: senderType
   }),
 

@@ -31,11 +31,12 @@ import {
   changeOldUrl,
   setDomHighlight,
   evalUrl,
-  setCustomCss
+  setCustomCss,
+  addDatepicker
 } from 'actions';
 import { safeQuerySelectorAll } from 'utils/dom';
 import { SESSION_NAME, NEXT_MESSAGE } from 'constants';
-import { isVideo, isImage, isButtons, isText, isCarousel } from './msgProcessor';
+import { isVideo, isImage, isButtons, isText, isCarousel, isDatepicker } from './msgProcessor';
 import WidgetLayout from './layout';
 import { storeLocalSession, getLocalSession } from '../../store/reducers/helper';
 
@@ -557,6 +558,10 @@ class Widget extends Component {
           title: element.title,
           image: element.src
         })
+      );
+    } else if (isDatepicker(messageClean)) {
+      this.props.dispatch(
+        addDatepicker(messageClean)
       );
     } else {
       // some custom message

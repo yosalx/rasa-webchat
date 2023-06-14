@@ -4,7 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 
 import { MESSAGES_TYPES } from 'constants';
-import { Video, Image, Message, Carousel, Buttons } from 'messagesComponents';
+import { Video, Image, Message, Carousel, Buttons, Datepicker } from 'messagesComponents';
 
 import './styles.scss';
 import ThemeContext from '../../../../ThemeContext';
@@ -56,6 +56,9 @@ class Messages extends Component {
         }
         case MESSAGES_TYPES.BUTTONS: {
           return Buttons;
+        }
+        case MESSAGES_TYPES.DATEPICKER: {
+          return Datepicker;
         }
         case MESSAGES_TYPES.CUSTOM_COMPONENT:
           return connect(

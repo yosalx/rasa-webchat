@@ -103,6 +103,13 @@ export function addCarousel(carousel) {
   };
 }
 
+export function addDatepicker(datepicker) {
+  return {
+    type: actions.ADD_DATEPICKER,
+    datepicker
+  };
+}
+
 export function addVideoSnippet(video) {
   return {
     type: actions.ADD_NEW_VIDEO_VIDREPLY,
